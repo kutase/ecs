@@ -1,6 +1,6 @@
 package ecs
 
-type System struct {
+type System interface {
 	Update (dt float32)
 	Remove (e BasicEntity)
 }
