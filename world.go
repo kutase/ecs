@@ -18,7 +18,7 @@ func (world *World) AddSystem (system System) {
 }
 
 func (world *World) Update (dt float32) {
-	for _, system := world.systems {
+	for _, system := range world.systems {
 		system.Update(dt)
 	}
 }
