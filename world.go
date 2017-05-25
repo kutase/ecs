@@ -10,11 +10,11 @@ type World struct {
 
 func (world *World) AddSystem (system System) {
 	if initializer, ok := system.(Initializer); ok {
-		initializer.New(w)
+		initializer.New(world)
 	}
 
 	world.systems = append(world.systems, system)
-	sort.Sort(w.systems)
+	sort.Sort(world.systems)
 }
 
 func (world *World) Update (dt float32) {
